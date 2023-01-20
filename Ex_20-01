@@ -1,0 +1,32 @@
+<?php 
+function print_state($t){
+  foreach ($t as $idx => $value) {
+    echo " ";
+    echo $value ? "o" : "x";
+  }
+  echo "\n";
+}
+for($i=0 ; $i<10; $i++){
+  $arr[$i] = (bool) rand(0,1); 
+}
+
+print_state($arr);
+
+$arr2 = array(10);
+$fin=0;
+
+while($fin<10){
+  foreach ($arr as $key => $value) {
+    if ($arr[(($key-1+10)%10)] xor $arr[(($key+1)%10)]){
+      $arr2[$key] = true;
+    } else{
+      $arr2[$key] = false;
+    }
+  }
+  
+  echo"\n";
+  print_state($arr2);
+  $fin++;
+  $arr=$arr2;
+}
+?>
