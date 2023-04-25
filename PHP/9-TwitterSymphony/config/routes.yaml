@@ -1,0 +1,25 @@
+login:
+    path: /login
+    controller: App\Controller\TwitterController::login
+createPost:
+    path: /createPost
+    controller: App\Controller\TwitterController::createPost
+signup:
+    path: /signup
+    controller: App\Controller\TwitterController::signup
+
+deletePost:
+    path: /deletePost/{id}
+    controller: App\Controller\TwitterController::deletePost
+    requirements:
+        id: '\d+'
+post:
+    path: /post/{id}
+    controller: App\Controller\TwitterController::post
+    requirements:
+        id: '\d+'
+lastPosts:
+    path: /lastPosts
+    controller: App\Controller\TwitterController::lastPosts
+    requirements:
+        id: '\d+'
